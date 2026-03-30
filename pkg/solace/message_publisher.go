@@ -18,11 +18,10 @@ package solace
 
 // MessagePublisher represents the shared functionality between all publisher instances.
 type MessagePublisher interface {
-	// Extend LifecycleControl for various lifecycle management functionality.
 	LifecycleControl
 }
 
-// MessagePublisherHealthCheck allows applications to check and listen for events
+// MessagePublisherHealthCheck should allow applications to check and listen for events
 // that indicate when message publishers are ready to publish. This is often used
 // to handle various back pressure schemes, such as reject on full, and allows
 // publishing to stop until the publisher can begin accepting more messages.
@@ -35,7 +34,7 @@ type MessagePublisherHealthCheck interface {
 	// SetPublisherReadinessListener registers a listener to be called when the
 	// publisher can send messages. Typically, the listener is notified after a
 	// Publisher instance raises an error indicating that the outbound message
-	// buffer is full.
+	// buffer is full (no space left in buffer).
 	SetPublisherReadinessListener(listener PublisherReadinessListener)
 
 	// NotifyWhenReady makes a request to notify the application when the
