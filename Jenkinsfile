@@ -2,7 +2,7 @@
 //
 // Copyright 2021-2026 Solace Corporation. All rights reserved.
 //
-// Oseme Testing the rename of the Repo
+// Testing the rename of the Repo
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
